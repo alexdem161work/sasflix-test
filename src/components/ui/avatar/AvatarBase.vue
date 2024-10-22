@@ -8,6 +8,8 @@
 
 <style lang="scss">
 .avatar-base {
+  box-sizing: border-box;
+
   width: 46px;
   height: 46px;
 

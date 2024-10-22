@@ -1,10 +1,15 @@
 <script setup lang="ts">
-import CommentItem from "@/components/comments/CommentItem.vue";
+import { useI18n } from 'vue-i18n';
+import { Comment } from '@/types/Comment';
+
+import CommentItem from '@/components/comments/CommentItem.vue';
 
 type Props = {
-  comments: [],
+  comments: Comment[],
   total: number,
 };
+
+const { t } = useI18n();
 
 const emit = defineEmits(['delete']);
 defineProps<Props>()
@@ -14,7 +19,7 @@ const onDelete = (id: number): void => emit('delete', id);
 
 <template>
   <div class="comment-list">
-    <div class="comment-list__counter">{{ total }} комментариев</div>
+    <div class="comment-list__counter">{{ t('commentsCount', { n: total }) }}</div>
 
     <div class="comment-list__items">
       <CommentItem
@@ -38,6 +43,7 @@ const onDelete = (id: number): void => emit('delete', id);
   }
 
   &__counter {
+    font: var(--sas-typography__h1);
     padding-bottom: 24px;
   }
 }

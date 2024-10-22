@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import AvatarBase from "@/components/ui/avatar/AvatarBase.vue";
-import ButtonBase from "@/components/ui/button/ButtonBase.vue";
+import { Comment } from '@/types/Comment';
+
+import AvatarBase from '@/components/ui/avatar/AvatarBase.vue';
+import ButtonBase from '@/components/ui/button/ButtonBase.vue';
 
 type Props = {
-  comment: {},
+  comment: Comment,
 }
 
 const emit = defineEmits(['delete']);
@@ -24,7 +26,13 @@ const onDelete = () => emit('delete');
 
       <div class="comment-item__actions">
         <span>Today</span>
-        <ButtonBase @click="onDelete">Удалить</ButtonBase>
+
+        <ButtonBase
+          variant="danger"
+          @click="onDelete"
+        >
+          Удалить
+        </ButtonBase>
       </div>
     </div>
   </div>

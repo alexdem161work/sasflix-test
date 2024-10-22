@@ -27,7 +27,10 @@ const onClick = () => emit('click');
   >
     <slot name="icon"/>
     <slot/>
-    {{ count }}
+
+    <span class="reaction-button__count">
+      {{ count }}
+    </span>
   </button>
 </template>
 
@@ -36,5 +39,10 @@ const onClick = () => emit('click');
   background: #f3f3f3;
 
   padding: 8px 8px 8px 12px;
+
+  &--active {
+    color: white;
+    background: #fd3b30;
+  }
 }
 </style>

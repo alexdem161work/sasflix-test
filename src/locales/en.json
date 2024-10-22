@@ -1,0 +1,15 @@
+{
+  "brand": "ikakprosto.ru",
+
+  "reactions": {
+    "like": "Like",
+    "trash": "Trash"
+  },
+
+  "buttons": {
+    "openComment": "Open comments",
+    "delete": "Удалить"
+  },
+
+  "commentsCount": "{n} комментарий | {n} комментария | {n} комментариев"
+}

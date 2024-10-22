@@ -33,6 +33,8 @@ const onLoadComments = () => emit('loadComments');
       Open comments
     </ButtonBase>
 
+    <span>Today</span>
+
     <TagList
       :tags="post.tags"
     />

@@ -1,16 +1,18 @@
 <script setup lang="ts">
 import { usePublicationsStore } from '@/stores/publications';
+import type { Post } from '@/types/Post';
 
 import PublicationFooter from '@/components/publication/PublicationFooter.vue'
-import PublicationComments from '@/components/comments/CommentList.vue'
+import CommentList from '@/components/comments/CommentList.vue'
 
 type Props = {
-  post: {}
+  post: Post
 }
 
 const store = usePublicationsStore();
 const props = defineProps<Props>();
 
+// Удаляет комментарий у поста
 const onDeleteComment = (id: number): void => store.deleteComment(props.post.id, id);
 </script>
 
@@ -27,7 +29,7 @@ const onDeleteComment = (id: number): void => store.deleteComment(props.post.id,
       @loadComments="store.loadComments(post.id)"
     />
 
-    <PublicationComments
+    <CommentList
       v-if="post.comments"
       :comments="post.comments.comments"
       :total="post.comments.total"
@@ -39,7 +41,8 @@ const onDeleteComment = (id: number): void => store.deleteComment(props.post.id,
 <style lang="scss">
 .publication-item {
   &__title {
-    margin-bottom: 16px;
+    margin-bottom: 9px;
+    font: var(--sas-typography__h1);
   }
 
   &__body {

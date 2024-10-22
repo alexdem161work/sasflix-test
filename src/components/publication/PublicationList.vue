@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import type { Post } from '@/types/Post';
+
 import PublicationItem from '@/components/publication/PublicationItem.vue'
 
 type Props = {
-  posts: [],
+  posts: Post[],
 }
 
 defineProps<Props>()

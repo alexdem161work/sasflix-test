@@ -16,6 +16,9 @@ import TheHeader from '@/components/layout/TheHeader.vue';
 @use '@/assets/styles/application.scss';
 
 .application {
+  padding-top: 21px;
+  padding-bottom: 58px;
+
   display: flex;
   flex-direction: column;
   align-items: center;

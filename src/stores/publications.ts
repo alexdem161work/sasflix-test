@@ -1,8 +1,14 @@
 import { defineStore } from 'pinia';
 import { getComments, getPublications } from '@/api/publications';
 
+import type { Post } from '@/types/Post';
+
+type PublicationsState = {
+  publications: Post[];
+};
+
 export const usePublicationsStore = defineStore('publications', {
-  state: () => ({
+  state: (): PublicationsState => ({
     publications: [],
   }),
 
