@@ -1,0 +1,43 @@
+body {
+  line-height: 1;
+}
+
+menu, ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+fieldset {
+  outline: none;
+  border: none;
+}
+
+input {
+  border: none;
+  width: 100%;
+  background: transparent;
+  padding: 0;
+
+  &:hover, &:focus {
+    outline: none;
+  }
+}
+
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
