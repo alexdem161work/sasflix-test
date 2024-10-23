@@ -9,12 +9,12 @@ import LikeOnIcon from '@/components/icons/LikeOnIcon.vue';
 import DislikeOnIcon from "@/components/icons/DislikeOnIcon.vue";
 
 type Props = {
-  likeCount: number;
-  dislikeCount: number;
+  likeCount: number; // Колличество лайков
+  dislikeCount: number; // Колличество дизлайков
 
-  liked?: boolean,
-  disliked?: boolean,
-}
+  liked?: boolean, // Пользователь поставил лайк
+  disliked?: boolean, // Пользователь поставил дизлайк
+};
 
 const { t } = useI18n();
 
@@ -24,12 +24,16 @@ withDefaults(defineProps<Props>(), {
   disliked: false,
 });
 
+// отправляет событие нажатия на кнопку like
 const onLike = () => emit('like');
+
+// отправляет событие нажатия на кнопку dislike
 const onDislike = () => emit('dislike');
 </script>
 
 <template>
   <div class="reaction-base">
+    <!-- Кнопка лайка -->
     <ReactionButton
       class="reaction-button--like"
       :count="likeCount"
@@ -45,6 +49,7 @@ const onDislike = () => emit('dislike');
       {{ t('reactions.like') }}
     </ReactionButton>
 
+    <!-- Кнопка дизлайка -->
     <ReactionButton
       class="reaction-button--dislike"
       :count="dislikeCount"

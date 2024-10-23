@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div class="tag-item">
     <slot/>
@@ -15,5 +11,7 @@
     background: #f5f5f5;
     padding: 4px;
     border-radius: 3px;
+
+    font: var(--sas-typography__caption);
   }
 </style>

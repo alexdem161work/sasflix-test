@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import type { Post } from '@/types/Post';
 
-import PublicationItem from '@/components/publication/PublicationItem.vue'
+import PublicationItem from '@/components/publication/PublicationItem.vue';
 
 type Props = {
   posts: Post[],
-}
+};
 
-defineProps<Props>()
+defineProps<Props>();
 </script>
 
 <template>

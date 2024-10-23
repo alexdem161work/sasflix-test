@@ -1,18 +1,22 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
 import { usePublicationsStore } from '@/stores/publications'
+import type { Post } from '@/types/Post';
 
 import ReactionsBase from '@/components/ui/reactions/ReactionsBase.vue';
 import ButtonBase from '@/components/ui/button/ButtonBase.vue';
 import TagList from '@/components/ui/tag/TagList.vue';
 
 type Props = {
-  post: {}
+  post: Post
 }
 
+const { t } = useI18n();
 const store = usePublicationsStore();
 const emit = defineEmits(['loadComments']);
 defineProps<Props>();
 
+// Отправляет событие о том, что необходимо
 const onLoadComments = () => emit('loadComments');
 </script>
 
@@ -30,10 +34,12 @@ const onLoadComments = () => emit('loadComments');
     />
 
     <ButtonBase @click="onLoadComments">
-      Open comments
+      {{ t('buttons.openComment') }}
     </ButtonBase>
 
-    <span>Today</span>
+    <span class="publication-footer__date">
+      {{ t('today') }}
+    </span>
 
     <TagList
       :tags="post.tags"
@@ -46,5 +52,10 @@ const onLoadComments = () => emit('loadComments');
   display: flex;
   gap: 8px;
   align-items: center;
+
+  &__date {
+    color: #04040527;
+    font: var(--sas-typography__caption);
+  }
 }
 </style>

@@ -14,4 +14,5 @@ export const call = async (url: string, method: 'get' | 'post') => {
   }
 }
 
+// Получение данных с API методом GET
 export const get = (url: string) => call(url, 'get')

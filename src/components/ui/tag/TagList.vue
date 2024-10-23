@@ -2,8 +2,8 @@
 import TagItem from '@/components/ui/tag/TagItem.vue';
 
 type Props = {
-  tags: string[]
-}
+  tags: string[];
+};
 
 defineProps<Props>();
 </script>

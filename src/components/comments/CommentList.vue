@@ -14,6 +14,7 @@ const { t } = useI18n();
 const emit = defineEmits(['delete']);
 defineProps<Props>()
 
+// Отправляет событие о том, что необходимо удалить комментарий ID
 const onDelete = (id: number): void => emit('delete', id);
 </script>
 

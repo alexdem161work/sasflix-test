@@ -1,5 +1,6 @@
 import type { Comment } from '@/types/Comment';
 
+// Публикация
 export type Post = {
   id: number;
   title: string;

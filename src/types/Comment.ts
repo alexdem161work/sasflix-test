@@ -1,3 +1,4 @@
+// Комментарий к публикации
 export type Comment = {
   id: number;
   body: string;

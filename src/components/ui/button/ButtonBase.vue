@@ -11,11 +11,13 @@ const props = withDefaults(defineProps<Props>(), {
   variant: 'link',
 });
 
+// Собирает классы для кнопки на основе переданных пропсов
 const classes = computed(() => ([
   'button-base',
   `button-base--${props.variant}`,
 ]));
 
+// Отправляет событие click
 const onClick = (e: MouseEvent) => emit('click', e)
 </script>
 
